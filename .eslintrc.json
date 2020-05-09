@@ -2,9 +2,11 @@
   "env": {
     "browser": true,
     "commonjs": true,
-    "es6": true
+    "es6": true,
+    "node": true
   },
-  "extends": ["airbnb"],
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -13,7 +15,9 @@
     "ecmaVersion": 2018
   },
   "rules": {
+    "prettier/prettier": "error",
     "linebreak-style": 0,
-    "no-unused-expressions": ["error", { "allowTaggedTemplates": true }]
+    "no-unused-expressions": ["error", { "allowTaggedTemplates": true }],
+    "no-unused-vars": "warn"
   }
 }
