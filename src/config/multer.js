@@ -1,6 +1,7 @@
 const multer = require('multer');
 const path = require('path');
 const crypto = require('crypto');
+const multerS3 = require('multer-s3');
 
 module.exports = {
   dest: path.resolve(__dirname, '..', '..', 'tmp', 'uploads'),
