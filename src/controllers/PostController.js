@@ -21,7 +21,9 @@ module.exports = {
       url,
     });
 
-    res.json(post);
+    // console.log(post);
+
+    return res.json(post);
   },
   async delete(req, res) {
     const { id } = req.params;
