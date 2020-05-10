@@ -7,7 +7,7 @@ const routes = require('./routes');
 const app = express();
 
 mongoose.connect(
-  'mongodb+srv://lmoraiscam:<password>@cluster0-pmecj.mongodb.net/test?retryWrites=true&w=majority',
+  'mongodb+srv://lmoraiscam:upload-image@cluster0-pmecj.mongodb.net/test?retryWrites=true&w=majority',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
