@@ -1,6 +1,11 @@
 const PostModel = require('../models/Posts');
 
 module.exports = {
+  async index(req, res) {
+    const post = await PostModel.find();
+
+    return res.json(post);
+  },
   async store(req, res) {
     const {
       originalname: name,

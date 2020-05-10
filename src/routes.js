@@ -5,6 +5,8 @@ const PostController = require('./controllers/PostController');
 
 const routes = express.Router();
 
+routes.get('/posts', PostController.index);
+
 routes.post(
   '/posts',
   multer(multerConfig).single('file'),
