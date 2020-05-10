@@ -19,6 +19,7 @@
     "linebreak-style": 0,
     "no-unused-expressions": ["error", { "allowTaggedTemplates": true }],
     "no-unused-vars": "warn",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "consistent-return": "warn"
   }
 }

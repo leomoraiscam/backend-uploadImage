@@ -7,12 +7,7 @@ module.exports = {
     return res.json(post);
   },
   async store(req, res) {
-    const {
-      originalname: name,
-      size,
-      filename: key,
-      location: url = '',
-    } = req.file;
+    const { originalname: name, size, key, location: url = '' } = req.file;
 
     const post = await PostModel.create({
       name,
