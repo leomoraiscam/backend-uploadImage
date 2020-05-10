@@ -13,4 +13,6 @@ routes.post(
   PostController.store
 );
 
+routes.delete('/post/:id', PostController.delete);
+
 module.exports = routes;
