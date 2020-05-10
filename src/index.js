@@ -8,13 +8,10 @@ const routes = require('./routes');
 
 const app = express();
 
-mongoose.connect(
-  'mongodb+srv://lmoraiscam:upload-image@cluster0-pmecj.mongodb.net/test?retryWrites=true&w=majority',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 app.use(routes);
 app.use(express.json());
