@@ -19,8 +19,12 @@ const StorageTypes = {
     },
   }),
   s3: multerS3({
-    s3: new aws.S3(),
-    bucket: 'nodejs-upload-image',
+    s3: new aws.S3({
+      accessKeyId: process.env.AWS_ACCESS_KEY,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      region: process.env.REGION,
+    }),
+    bucket: process.env.AWS_BUCKET,
     contentType: multerS3.AUTO_CONTENT_TYPE,
     acl: 'public-read',
     key: (req, file, cb) => {
