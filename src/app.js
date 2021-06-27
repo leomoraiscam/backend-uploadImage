@@ -32,18 +32,18 @@ class App {
   }
 
   errorHandler() {
-    this.server.use((err, req, res, next) => {
-      if (err instanceof GlobalError) {
-        return res.status(err.statusCode).json({
+    this.server.use((error, request, response, next) => {
+      if (error instanceof GlobalError) {
+        return response.status(error.statusCode).json({
           status: 'error',
-          message: err.message,
+          message: error.message,
         });
       }
 
-      return res.status(500).json({
+      return response.status(500).json({
         status: 'error',
         message: 'Internal Server Error',
-        codeMessage: err.message,
+        codeMessage: error.message,
       });
     });
   }
