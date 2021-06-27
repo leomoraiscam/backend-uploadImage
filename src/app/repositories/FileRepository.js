@@ -1,9 +1,10 @@
 import File from '../models/File';
 
 class FileRepository {
-  async create({ filename }) {
+  async create({ filename, user_id }) {
     return File.create({
       filename,
+      user_id,
     });
   }
 }

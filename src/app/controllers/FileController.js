@@ -2,12 +2,12 @@ import CreateFileService from '../services/CreateFileService';
 
 class FileController {
   async create(req, res) {
-    const { user_id } = req.body;
     const { key } = req.file;
+    const { user: id } = req;
 
     const post = await CreateFileService.execute({
       filename: key,
-      user_id,
+      user_id: id,
     });
 
     return res.json(post);
